@@ -24,15 +24,12 @@ import url from './config/URL';
 import ForgetPassword from './pages/ForgetPassword';
 
 function App() {
-  console.log(url)
-  console.log(process.env.REACT_APP_DEV_MODE)
-  console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID)
   const [loading, setloading] = useState(false);
   let ctx = useContext(UserContext);
-  console.log(ctx);
+
   let login = ctx.user.login;
   let admin = ctx.user.user.isAdmin || false
-  console.log(admin);
+
   useEffect(() => {
     axios.interceptors.request.use((config) => {
       setloading(true);
