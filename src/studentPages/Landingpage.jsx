@@ -53,14 +53,14 @@ const Landingpage = () => {
               <label
                 key={ele._id}
                 className={`p-3 w-72 rounded-lg cursor-pointer ${
-                  selectedExam === ele ? 'bg-blue-600 text-white' : 'bg-gray-200'
+                  selectedExam === ele ? 'bg-black text-white' : 'bg-gray-900 text-white'
                 }`}
                 onClick={() => setSelectedExam(ele)}
               >
                 <input
                   type="radio"
                   name="exam"
-                  className="hidden"
+                  className="mx-3"
                   checked={selectedExam === ele}
                   onChange={() => setSelectedExam(ele)}
                 />

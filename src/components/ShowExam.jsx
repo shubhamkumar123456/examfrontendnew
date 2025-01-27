@@ -46,8 +46,8 @@ const ShowExam = (props) => {
       <div className='grid lg:grid-cols-4 md:grid-cols-3 sn:grid-cols-2 grid-cols-1 gap-2' gutter={16}>
     {props.Exams.map((ele)=>{
       return  <div className=' relative' key={ele._id} span={8}>
+        <Switch className='ring-1 ring-[#CFB53B] absolute z-50 right-2 top-4 ' checked={ele.enable} onClick={()=>onChange(ele)} />
       <Card onClick={()=>handleCardClick(ele)} title={`Batch:  ${ele.batch}`} bordered={false}>
-        <Switch className='ring-1 ring-[#CFB53B] absolute right-2 top-4 ' checked={ele.enable} onClick={()=>onChange(ele)} />
         {ele.examName}
       </Card>
     </div>
@@ -56,20 +56,30 @@ const ShowExam = (props) => {
   </div>
 
       
-      <Modal title="Exam paper" open={showModel} onOk={handleSubmit} onCancel={handleCancel}>
-       
-      {  selectedExam.question.map((ele,i)=>{
-        return <ol key={ele._id} type='A'>
-            <h5>Question {i+1} :{ele.question}</h5>
-            {ele.options.map((opt,i)=>{
-                return <li key={i} className='form-control my-1'>{opt.text}</li>
-            })}
-        </ol>
-      })}
-      {!selectedExam.question.length && <h3>No question is added in the exam</h3>}
-         
-
+  <Modal title="Exam paper" open={showModel} onOk={handleSubmit} onCancel={handleCancel}>
+  {selectedExam.question.length > 0 ? (
+    selectedExam.question.map((ele, i) => (
+      <ol key={ele._id} type="A" className="mb-6">
+        <h5 className="text-lg font-semibold mb-3">
+          Question {i + 1}: {ele.question}
+        </h5>
+        {ele.options.map((opt, idx) => (
+          <li
+            key={idx}
+            className="w-full border border-gray-300 rounded-lg p-3 mb-2 hover:bg-gray-100"
+          >
+            {opt.text}
+          </li>
+        ))}
+      </ol>
+    ))
+  ) : (
+    <h3 className="text-gray-600 text-center text-lg font-medium">
+      No questions have been added to the exam.
+    </h3>
+  )}
 </Modal>
+
     </div>
   )
 }

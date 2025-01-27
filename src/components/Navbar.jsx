@@ -31,7 +31,7 @@ function Header() {
    <nav className="bg-[rgb(215,159,56)] z-50 fixed top-0 px-8 left-0 right-0">
   <div className="container relative mx-auto py-2 flex justify-between items-center">
     <HiOutlineBars3CenterLeft onClick={()=>setshowDropDown1(!showDropDown1)} className="md:hidden block" size={28}/>
-    <h1 onClick={()=>navigate(user.isAdmin?'/admin':'/dashboard/student')} className="text-2xl font-bold text-gray-50">ExamMaster</h1>
+    <h1 onClick={()=>navigate(user.isAdmin===true?'/admin':'/dashboard/student')} className="text-2xl font-bold text-gray-50">ExamMaster</h1>
     <div className=" space-x-10 md:flex hidden">
       <div className="flex items-center space-x-2">
         <span>
