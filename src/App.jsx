@@ -22,6 +22,7 @@ import axios from 'axios';
 import Profilepage from './pages/Profilepage';
 import url from './config/URL';
 import ForgetPassword from './pages/ForgetPassword';
+import StudentNotes from './studentPages/StudentNotes';
 
 function App() {
   const [loading, setloading] = useState(false);
@@ -71,9 +72,11 @@ function App() {
             {login === true && <Route path='/landingpage' element={<Landingpage />} />}
             {login === true && <Route path='/question/:tags' element={<Question />} />}
             {login === true && <Route path='/dashboard/student' element={<StudenteDashBoard />} />}
-            {<Route path='/profilepage' element={<Profilepage />} />}
-            <Route path='/examsubmitted' element={<ExamsubmitedSuccess />} />
-            <Route path='/forgetPassowrd' element={<ForgetPassword />} />
+            {login===true &&<Route path='/profilepage' element={<Profilepage />} />}
+          { login===true && <Route path='/examsubmitted' element={<ExamsubmitedSuccess />} />}
+          { login===true && <Route path='/notes' element={<StudentNotes />} />}
+         { login===false &&  <Route path='/forgetPassowrd' element={<ForgetPassword />} />}
+         
 
 
           </Routes>

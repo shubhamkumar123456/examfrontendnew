@@ -18,6 +18,7 @@ const AdminPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpen1, setIsModalOpen1] = useState(false);
   const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
+  const [showPage, setshowPage] = useState("");
 
 
   const showModal = () => {
@@ -73,10 +74,13 @@ const AdminPage = () => {
         <button className="mx-1 my-1 bg-[#CFB53B] hover:bg-[#EFB53B] text-white py-2 px-4 rounded" onClick={() => setShowExamPage(true)}>
           Show Exam papers
         </button>
-        <button className="mx-1 my-1 bg-[#CFB53B] hover:bg-[#EFB53B] text-white py-2 px-4 rounded" onClick={handleUserClicked}>
-          All users
+        <button onClick={()=>setshowPage("uploadNotes")} className="mx-1 my-1 bg-[#CFB53B] hover:bg-[#EFB53B] text-white py-2 px-4 rounded" >
+          Upload Notes
+
+          {/* <input hidden type="file" multiple /> */}
         </button>
       </div>
+       
     </div>
   
     {/* Main Content */}
@@ -97,6 +101,12 @@ const AdminPage = () => {
         <AlluserDetails allUser={allUserDetails} setallUserDetails={setallUserDetails} />
       )}
    </div>
+  {showPage==="uploadNotes" && <div className='z-10'>
+    <label htmlFor="">
+      
+      <input type="text" />
+    </label>
+   </div>}
   </div>
   </ThemeProvider>
   

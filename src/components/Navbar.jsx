@@ -41,14 +41,14 @@ function Header() {
         </span>
         <span className="text-gray-50">Topics</span>
       </div>
-      <div className="flex items-center space-x-2">
+      <Link to={'/notes'} className="flex items-center space-x-2">
         <span>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
           </svg>
         </span>
         <span className="text-gray-50">Notes</span>
-      </div>
+      </Link>
       <div className="flex items-center space-x-2">
         <span>
           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -61,7 +61,7 @@ function Header() {
    {showDropDown1 &&<div className=" md:hidden bg-white text-black rounded-lg flex flex-col items-left  absolute top-[85%] py-2 w-max space-x-10">
     <ul className="min-w-24">
       <li className="py-2 px-3 hover:bg-gray-100"><Link className="">Topic</Link></li>
-      <li className="py-2 px-3 hover:bg-gray-100"><Link className="">Notes</Link></li>
+      <li className="py-2 px-3 hover:bg-gray-100"><Link to={'/notes'} className="">Notes</Link></li>
     </ul>
     
     
