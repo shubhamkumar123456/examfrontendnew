@@ -74,6 +74,9 @@ const AdminPage = () => {
         <button className="mx-1 my-1 bg-[#CFB53B] hover:bg-[#EFB53B] text-white py-2 px-4 rounded" onClick={() => setShowExamPage(true)}>
           Show Exam papers
         </button>
+        <button className="mx-1 my-1 bg-[#CFB53B] hover:bg-[#EFB53B] text-white py-2 px-4 rounded" onClick={handleUserClicked}>
+          Show All Users
+        </button>
         <button onClick={()=>setshowPage("uploadNotes")} className="mx-1 my-1 bg-[#CFB53B] hover:bg-[#EFB53B] text-white py-2 px-4 rounded" >
           Upload Notes
 
