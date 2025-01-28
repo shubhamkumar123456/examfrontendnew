@@ -23,7 +23,7 @@ const Exampage = () => {
   const questions = state?.question || [];
   const examId = state?._id;
 
-  const initialTime = 1 * 60000; // 2 minutes per question
+  const initialTime = questions.length * 60000; // 2 minutes per question
   // const initialTime = questions.length * 2 * 60000; // 2 minutes per question
   const [timer] = useState(() => createExamTimer(initialTime)); // Initialize timer once
   const { value } = useTimeModel(timer);
