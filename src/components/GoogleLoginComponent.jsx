@@ -11,7 +11,7 @@ import {
 import { jwtDecode } from "jwt-decode";
 import UserContext from "../context/UserContext";
 const CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
-console.log(CLIENT_ID)
+// console.log(CLIENT_ID)
 
 const GoogleLoginComponent = () => {
     let ctx = useContext(UserContext);
