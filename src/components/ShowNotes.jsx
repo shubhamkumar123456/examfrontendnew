@@ -41,7 +41,7 @@ const ShowNotes = () => {
 
   return (
     <div className="relative z-10">
-      <ul className='grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4 text-center'>
+      <ul className='grid lg:grid-cols-6 md:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-4 text-center'>
         {notes.map((pdf) => (
           <li key={pdf.file} className='text-center w-[100px]'>
             <img className='m-auto' src="https://upload.wikimedia.org/wikipedia/commons/8/87/PDF_file_icon.svg" alt="PDF" width="30" />
