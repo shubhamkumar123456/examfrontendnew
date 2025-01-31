@@ -12,6 +12,7 @@ const StudenteDashBoard = () => {
   const [details, setDetails] = useState([]);
   console.log(details)
   const [selectedExam, setSelectedExam] = useState([]);
+  console.log(selectedExam)
 
   const ctx = useContext(UserContext);
   let user = ctx.user;
@@ -92,11 +93,14 @@ const StudenteDashBoard = () => {
               </h5>
               {ele.options.map((opt, i) => (
                 <li
-                  key={i}
-                  className={`my-2 p-2 rounded text-[#BF9B30] font-semibold ${
-                    opt._id === ele.selectedOption?._id
-                      ? 'bg-green-500 text-white'
-                      : 'bg-gray-200'
+                key={i}
+                className={`my-2 p-2 rounded font-semibold 
+                  ${
+                    ele.correctOption._id === ele.selectedOption?._id && ele.correctOption._id === opt._id
+                      ? 'bg-green-500 text-white' // Correct option selected
+                      : ele.selectedOption?._id === opt._id
+                      ? 'bg-red-500 text-white' // Wrong option selected
+                      : 'bg-gray-200 text-black' // Default unselected option
                   }`}
                 >
                   {opt.text}{' '}
