@@ -23,6 +23,7 @@ import Profilepage from './pages/Profilepage';
 import url from './config/URL';
 import ForgetPassword from './pages/ForgetPassword';
 import StudentNotes from './studentPages/StudentNotes';
+import ChatWithAi from './pages/ChatWithAi';
 
 function App() {
   const [loading, setloading] = useState(false);
@@ -76,6 +77,7 @@ function App() {
           { login===true && <Route path='/examsubmitted' element={<ExamsubmitedSuccess />} />}
           { login===true && <Route path='/notes' element={<StudentNotes />} />}
          { login===false &&  <Route path='/forgetPassowrd' element={<ForgetPassword />} />}
+       <Route path='/chatAi' element={login===true?<ChatWithAi />:<Navigate to={'/login'}/>} />
          
 
 

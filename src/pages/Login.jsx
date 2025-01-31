@@ -20,6 +20,9 @@ const Login = () => {
       email: emailRef.current.value,
       password: passwordRef.current.value,
     };
+     if(!obj.email || !obj.name || !obj.password){
+            return toast.error('please fill all the fields' ,{position:"top-center"})
+          }
 
     try {
       const res = await axios.post(

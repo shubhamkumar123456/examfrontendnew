@@ -25,6 +25,9 @@ const Signup = () => {
         password: passwordRef.current.value,
       };
       console.log(obj)
+      if(!obj.email || !obj.name || !obj.password){
+        return toast.error('please fill all the fields' ,{position:"top-center"})
+      }
    try {
     const res = await axios.post(
       url+'/user/create',
