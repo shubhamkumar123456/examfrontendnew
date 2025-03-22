@@ -105,9 +105,9 @@ const Exampage = () => {
         </div>
         {questions.map((ele, i) => (
           <ol key={ele._id} type="A" className="mb-6">
-            <h5 style={{whiteSpace: "pre-line" }} className="text-lg font-semibold mb-3">
+            <pre style={{whiteSpace: "pre-line" }} className="text-lg font-semibold mb-3">
               Question {i + 1}: {ele.question}
-            </h5>
+            </pre>
             {ele.options.map((opt, i) => (
               <label
                 htmlFor={opt._id}

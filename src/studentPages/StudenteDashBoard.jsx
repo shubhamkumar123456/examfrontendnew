@@ -88,7 +88,7 @@ const StudenteDashBoard = () => {
 
           {selectedExam.map((ele, i) => (
             <ol key={ele._id} className="list-decimal pl-6 mb-6">
-              <h5 className="font-semibold text-[#BF9B30]">
+              <h5 style={{whiteSpace: "pre-line" }} className="font-semibold text-[#BF9B30]">
                 Question {i + 1}: {ele.question}
               </h5>
               {ele.options.map((opt, i) => (
