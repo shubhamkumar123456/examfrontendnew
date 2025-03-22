@@ -60,7 +60,7 @@ const ShowExam = (props) => {
   {selectedExam.question.length > 0 ? (
     selectedExam.question.map((ele, i) => (
       <ol key={ele._id} type="A" className="mb-6">
-        <h5 className="text-lg font-semibold mb-3">
+        <h5 className="text-lg  font-semibold mb-3" style={{whiteSpace: "pre-line" }}>
           Question {i + 1}: {ele.question}
         </h5>
         {ele.options.map((opt, idx) => (
