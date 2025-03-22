@@ -101,7 +101,7 @@ const ShowQestion = (props) => {
   
       {filteredItem.map((ele, i) => (
         <ol key={ele._id} type="A" className="my-4">
-          <h5 className="font-medium text-lg">
+          <h5 style={{whiteSpace: "pre-line" }} className="font-medium text-lg">
             Question {i + 1}: {ele.question}
           </h5>
           <span 
