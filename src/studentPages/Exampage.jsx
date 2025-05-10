@@ -91,6 +91,22 @@ const Exampage = () => {
     }
   };
 
+
+   useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState !== 'visible') {
+        alert("You switched tabs! The exam will be submitted automatically.");
+        handleSubmit()
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
+
   return (
     <ThemeProvider>
       <div ref={targetRef} className="p-6 bg-transparent relative z-1 min-h-screen">
